@@ -1,6 +1,6 @@
 ﻿namespace WindowsForms
 {
-    partial class RentalRecord
+    partial class EditRentalRecord
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbTitle = new System.Windows.Forms.Label();
             this.tbCustomerName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtpRented = new System.Windows.Forms.DateTimePicker();
@@ -46,18 +46,19 @@
             this.dtpAge = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.bCancelRent = new System.Windows.Forms.Button();
+            this.lbRecordId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lbTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calisto MT", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(8, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 34);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Rent-a-Car";
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Font = new System.Drawing.Font("Calisto MT", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(8, 9);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(149, 34);
+            this.lbTitle.TabIndex = 0;
+            this.lbTitle.Text = "Rent-a-Car";
             // 
             // tbCustomerName
             // 
@@ -243,11 +244,23 @@
             this.bCancelRent.UseVisualStyleBackColor = true;
             this.bCancelRent.Click += new System.EventHandler(this.bCancelRent_Click);
             // 
-            // RentalRecord
+            // lbRecordId
+            // 
+            this.lbRecordId.AutoSize = true;
+            this.lbRecordId.Font = new System.Drawing.Font("Calisto MT", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRecordId.Location = new System.Drawing.Point(777, 9);
+            this.lbRecordId.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lbRecordId.Name = "lbRecordId";
+            this.lbRecordId.Size = new System.Drawing.Size(0, 22);
+            this.lbRecordId.TabIndex = 18;
+            this.lbRecordId.Visible = false;
+            // 
+            // EditRentalRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 496);
+            this.ClientSize = new System.Drawing.Size(884, 511);
+            this.Controls.Add(this.lbRecordId);
             this.Controls.Add(this.bCancelRent);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -265,12 +278,12 @@
             this.Controls.Add(this.dtpRented);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbCustomerName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbTitle);
             this.Font = new System.Drawing.Font("Rockwell Extra Bold", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
-            this.Name = "RentalRecord";
+            this.Name = "EditRentalRecord";
             this.Text = "Rental Record";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.EditRentalRecord_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,7 +291,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.TextBox tbCustomerName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtpRented;
@@ -296,6 +309,7 @@
         private System.Windows.Forms.DateTimePicker dtpAge;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button bCancelRent;
+        private System.Windows.Forms.Label lbRecordId;
     }
 }
 

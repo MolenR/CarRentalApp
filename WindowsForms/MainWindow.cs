@@ -19,20 +19,40 @@ namespace WindowsForms
 
         private void addRentalRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var addRentalRecord = new RentalRecord
-            {
-                MdiParent = this
-            };
-            addRentalRecord.Show();
+            var addRentalRecord = new EditRentalRecord();
+            addRentalRecord.ShowDialog();
+            addRentalRecord.MdiParent = this;
         }
 
         private void manageVehicleListingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var vehicleListing = new ManageVehicles
+            //Declare Variable
+            
+            // Cast Application from the base Form
+            var OpenForms = Application.OpenForms.Cast<Form>();
+
+            // Declare boolean to check if From is already open
+            bool isOpen = OpenForms.Any(qDB => qDB.Name == "ManageVehicles");
+
+            // Should check for this and not open another window
+            if(!isOpen)
             {
-                MdiParent = this
-            };
-            vehicleListing.Show();
+                var vehicleListing = new ManageVehicles();
+                vehicleListing.MdiParent = this;
+                vehicleListing.Show();
+            }
+        }
+
+        private void viewArchiveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var OpenForms = Application.OpenForms.Cast<Form>();
+            bool isOpen = OpenForms.Any(qDB => qDB.Name == "ManageRentalRecords");
+            if(!isOpen)
+            {
+                var manageRentalRecords = new ManageRentalRecords();
+                manageRentalRecords.MdiParent = this;
+                manageRentalRecords.Show();
+            }
         }
     }
 }

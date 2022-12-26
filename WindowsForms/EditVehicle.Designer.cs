@@ -1,6 +1,6 @@
 ﻿namespace WindowsForms
 {
-    partial class AddEditVehicle
+    partial class EditVehicle
     {
         /// <summary>
         /// Required designer variable.
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1097, 716);
+            this.ClientSize = new System.Drawing.Size(1134, 511);
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.lbTitleVehicle);
             this.Controls.Add(this.bSave);

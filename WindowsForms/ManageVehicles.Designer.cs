@@ -33,8 +33,7 @@
             this.bEditVehicle = new System.Windows.Forms.Button();
             this.bDeleteVehicle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.bRefresh = new System.Windows.Forms.Button();
-            this.bExitEdit = new System.Windows.Forms.Button();
+            this.bExitVehicleList = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,35 +89,23 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Manage Vehicle List";
             // 
-            // bRefresh
+            // bExitVehicleList
             // 
-            this.bRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRefresh.Location = new System.Drawing.Point(20, 422);
-            this.bRefresh.Name = "bRefresh";
-            this.bRefresh.Size = new System.Drawing.Size(83, 22);
-            this.bRefresh.TabIndex = 6;
-            this.bRefresh.Text = "Refresh";
-            this.bRefresh.UseVisualStyleBackColor = true;
-            this.bRefresh.Click += new System.EventHandler(this.bRefresh_Click);
-            // 
-            // bExitEdit
-            // 
-            this.bExitEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bExitEdit.Location = new System.Drawing.Point(1049, 744);
-            this.bExitEdit.Name = "bExitEdit";
-            this.bExitEdit.Size = new System.Drawing.Size(115, 28);
-            this.bExitEdit.TabIndex = 7;
-            this.bExitEdit.Text = "Exit";
-            this.bExitEdit.UseVisualStyleBackColor = true;
-            this.bExitEdit.Click += new System.EventHandler(this.bExitEdit_Click);
+            this.bExitVehicleList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bExitVehicleList.Location = new System.Drawing.Point(1049, 744);
+            this.bExitVehicleList.Name = "bExitVehicleList";
+            this.bExitVehicleList.Size = new System.Drawing.Size(115, 28);
+            this.bExitVehicleList.TabIndex = 7;
+            this.bExitVehicleList.Text = "Exit";
+            this.bExitVehicleList.UseVisualStyleBackColor = true;
+            this.bExitVehicleList.Click += new System.EventHandler(this.bExitVehicleList_Click);
             // 
             // ManageVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1176, 784);
-            this.Controls.Add(this.bExitEdit);
-            this.Controls.Add(this.bRefresh);
+            this.ClientSize = new System.Drawing.Size(1184, 786);
+            this.Controls.Add(this.bExitVehicleList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bDeleteVehicle);
             this.Controls.Add(this.bEditVehicle);
@@ -140,7 +127,6 @@
         private System.Windows.Forms.Button bEditVehicle;
         private System.Windows.Forms.Button bDeleteVehicle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button bRefresh;
-        private System.Windows.Forms.Button bExitEdit;
+        private System.Windows.Forms.Button bExitVehicleList;
     }
 }

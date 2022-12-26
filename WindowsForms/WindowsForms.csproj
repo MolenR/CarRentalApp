@@ -73,11 +73,17 @@
     <Compile Include="CarRentalRecord.cs">
       <DependentUpon>CarRentalDb.tt</DependentUpon>
     </Compile>
-    <Compile Include="AddEditVehicle.cs">
+    <Compile Include="EditVehicle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddEditVehicle.Designer.cs">
-      <DependentUpon>AddEditVehicle.cs</DependentUpon>
+    <Compile Include="EditVehicle.Designer.cs">
+      <DependentUpon>EditVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManageRentalRecords.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageRentalRecords.Designer.cs">
+      <DependentUpon>ManageRentalRecords.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageVehicles.cs">
       <SubType>Form</SubType>
@@ -85,11 +91,11 @@
     <Compile Include="ManageVehicles.Designer.cs">
       <DependentUpon>ManageVehicles.cs</DependentUpon>
     </Compile>
-    <Compile Include="RentalRecord.cs">
+    <Compile Include="EditRentalRecord.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RentalRecord.Designer.cs">
-      <DependentUpon>RentalRecord.cs</DependentUpon>
+    <Compile Include="EditRentalRecord.Designer.cs">
+      <DependentUpon>EditRentalRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -102,14 +108,17 @@
     <Compile Include="TypesOfCar.cs">
       <DependentUpon>CarRentalDb.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddEditVehicle.resx">
-      <DependentUpon>AddEditVehicle.cs</DependentUpon>
+    <EmbeddedResource Include="EditVehicle.resx">
+      <DependentUpon>EditVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManageRentalRecords.resx">
+      <DependentUpon>ManageRentalRecords.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageVehicles.resx">
       <DependentUpon>ManageVehicles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RentalRecord.resx">
-      <DependentUpon>RentalRecord.cs</DependentUpon>
+    <EmbeddedResource Include="EditRentalRecord.resx">
+      <DependentUpon>EditRentalRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
