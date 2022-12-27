@@ -27,5 +27,8 @@ namespace WindowsForms
     
         public virtual DbSet<CarRentalRecord> CarRentalRecords { get; set; }
         public virtual DbSet<TypesOfCar> TypesOfCars { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }

@@ -24,12 +24,15 @@ namespace WindowsForms
             carRentalDB = new CarRentalEntities();
         }
 
-
         private void bAddVehicle_Click(object sender, EventArgs e)
         {
-            EditVehicle addEdit = new EditVehicle(this); // Making the call to EditVehicles
-            addEdit.ShowDialog();
-            addEdit.MdiParent = this.MdiParent;
+            EditVehicle addEdit = new EditVehicle(this)
+            {
+                MdiParent = this.MdiParent
+            }; // Making the call to EditVehicles
+            addEdit.Show();
+            
+            //Add Vehicle to Table
             carRentalDB.TypesOfCars.Create();
             carRentalDB.SaveChanges();
 
@@ -58,6 +61,7 @@ namespace WindowsForms
                 };
                 addEditVehicle.Show();
 
+                //Edit Vehicle in Table
                 carRentalDB.TypesOfCars.Add(car);
                 carRentalDB.SaveChanges();
 
@@ -102,11 +106,6 @@ namespace WindowsForms
             }
         }
 
-        private void bExitVehicleList_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void ManageVehicles_Load(object sender, EventArgs e)
         {
             try
@@ -149,5 +148,14 @@ namespace WindowsForms
             //dgvVehicleList.Columns[1].HeaderText = "NAME";
         }
 
+        private void bExitVehicleList_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void bRefreshVehicles_Click(object sender, EventArgs e)
+        {
+            PopulateGrid();
+        }
     }
 }

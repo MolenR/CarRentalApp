@@ -35,6 +35,7 @@
             this.bEditRecord = new System.Windows.Forms.Button();
             this.bAddRecord = new System.Windows.Forms.Button();
             this.dgvRentalRecordList = new System.Windows.Forms.DataGridView();
+            this.bRefreshRecords = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRentalRecordList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             // bExitRecords
             // 
             this.bExitRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bExitRecords.Location = new System.Drawing.Point(1049, 744);
+            this.bExitRecords.Location = new System.Drawing.Point(1057, 744);
             this.bExitRecords.Name = "bExitRecords";
-            this.bExitRecords.Size = new System.Drawing.Size(115, 28);
+            this.bExitRecords.Size = new System.Drawing.Size(115, 30);
             this.bExitRecords.TabIndex = 19;
             this.bExitRecords.Text = "Exit";
             this.bExitRecords.UseVisualStyleBackColor = true;
@@ -74,9 +75,9 @@
             // bDeleteRecord
             // 
             this.bDeleteRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDeleteRecord.Location = new System.Drawing.Point(1061, 101);
+            this.bDeleteRecord.Location = new System.Drawing.Point(1057, 103);
             this.bDeleteRecord.Name = "bDeleteRecord";
-            this.bDeleteRecord.Size = new System.Drawing.Size(111, 29);
+            this.bDeleteRecord.Size = new System.Drawing.Size(115, 30);
             this.bDeleteRecord.TabIndex = 16;
             this.bDeleteRecord.Text = "Delete Record";
             this.bDeleteRecord.UseVisualStyleBackColor = true;
@@ -85,9 +86,9 @@
             // bEditRecord
             // 
             this.bEditRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditRecord.Location = new System.Drawing.Point(1061, 66);
+            this.bEditRecord.Location = new System.Drawing.Point(1057, 67);
             this.bEditRecord.Name = "bEditRecord";
-            this.bEditRecord.Size = new System.Drawing.Size(111, 29);
+            this.bEditRecord.Size = new System.Drawing.Size(115, 30);
             this.bEditRecord.TabIndex = 15;
             this.bEditRecord.Text = "Edit Record";
             this.bEditRecord.UseVisualStyleBackColor = true;
@@ -96,9 +97,9 @@
             // bAddRecord
             // 
             this.bAddRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAddRecord.Location = new System.Drawing.Point(1061, 31);
+            this.bAddRecord.Location = new System.Drawing.Point(1057, 31);
             this.bAddRecord.Name = "bAddRecord";
-            this.bAddRecord.Size = new System.Drawing.Size(111, 29);
+            this.bAddRecord.Size = new System.Drawing.Size(115, 30);
             this.bAddRecord.TabIndex = 14;
             this.bAddRecord.Text = "Add Record";
             this.bAddRecord.UseVisualStyleBackColor = true;
@@ -109,14 +110,26 @@
             this.dgvRentalRecordList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRentalRecordList.Location = new System.Drawing.Point(20, 31);
             this.dgvRentalRecordList.Name = "dgvRentalRecordList";
-            this.dgvRentalRecordList.Size = new System.Drawing.Size(1035, 385);
+            this.dgvRentalRecordList.Size = new System.Drawing.Size(1031, 743);
             this.dgvRentalRecordList.TabIndex = 13;
+            // 
+            // bRefreshRecords
+            // 
+            this.bRefreshRecords.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bRefreshRecords.Location = new System.Drawing.Point(1057, 139);
+            this.bRefreshRecords.Name = "bRefreshRecords";
+            this.bRefreshRecords.Size = new System.Drawing.Size(115, 30);
+            this.bRefreshRecords.TabIndex = 27;
+            this.bRefreshRecords.Text = "Refresh";
+            this.bRefreshRecords.UseVisualStyleBackColor = true;
+            this.bRefreshRecords.Click += new System.EventHandler(this.bRefreshRecords_Click);
             // 
             // ManageRentalRecords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 786);
+            this.Controls.Add(this.bRefreshRecords);
             this.Controls.Add(this.bExitRecords);
             this.Controls.Add(this.lbManageRentalRecords);
             this.Controls.Add(this.bDeleteRecord);
@@ -141,5 +154,6 @@
         private System.Windows.Forms.Button bEditRecord;
         private System.Windows.Forms.Button bAddRecord;
         private System.Windows.Forms.DataGridView dgvRentalRecordList;
+        private System.Windows.Forms.Button bRefreshRecords;
     }
 }

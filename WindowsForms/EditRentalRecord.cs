@@ -58,7 +58,7 @@ namespace WindowsForms
             dtpRented.Value = (DateTime)recordToEdit.DateRented;
             dtpReturned.Value = (DateTime)recordToEdit.DateRented;
             tbCost.Text = recordToEdit.Cost.ToString();
-            lbRecordId.Text = recordToEdit.id.ToString();
+            lbRecordId.Text = recordToEdit.Id.ToString();
         }
 
         private void bSubmit_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace WindowsForms
                     {
                         // IF in EditMode get ID and retrieve record from DB
                         var id = int.Parse(lbRecordId.Text);
-                        rentalRecord = carRentalDB.CarRentalRecords.FirstOrDefault(qDB => qDB.id == id);
+                        rentalRecord = carRentalDB.CarRentalRecords.FirstOrDefault(qDB => qDB.Id == id);
                     }
                     //If Not in EditMode. Add object to the DB
                     else

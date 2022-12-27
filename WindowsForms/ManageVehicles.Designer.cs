@@ -34,6 +34,7 @@
             this.bDeleteVehicle = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.bExitVehicleList = new System.Windows.Forms.Button();
+            this.bRefreshVehicles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehicleList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,15 +43,15 @@
             this.dgvVehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVehicleList.Location = new System.Drawing.Point(20, 31);
             this.dgvVehicleList.Name = "dgvVehicleList";
-            this.dgvVehicleList.Size = new System.Drawing.Size(1035, 385);
+            this.dgvVehicleList.Size = new System.Drawing.Size(1031, 743);
             this.dgvVehicleList.TabIndex = 0;
             // 
             // bAddVehicle
             // 
             this.bAddVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bAddVehicle.Location = new System.Drawing.Point(1061, 31);
+            this.bAddVehicle.Location = new System.Drawing.Point(1057, 31);
             this.bAddVehicle.Name = "bAddVehicle";
-            this.bAddVehicle.Size = new System.Drawing.Size(111, 29);
+            this.bAddVehicle.Size = new System.Drawing.Size(115, 30);
             this.bAddVehicle.TabIndex = 2;
             this.bAddVehicle.Text = "Add Vehicle";
             this.bAddVehicle.UseVisualStyleBackColor = true;
@@ -59,9 +60,9 @@
             // bEditVehicle
             // 
             this.bEditVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEditVehicle.Location = new System.Drawing.Point(1061, 66);
+            this.bEditVehicle.Location = new System.Drawing.Point(1057, 67);
             this.bEditVehicle.Name = "bEditVehicle";
-            this.bEditVehicle.Size = new System.Drawing.Size(111, 29);
+            this.bEditVehicle.Size = new System.Drawing.Size(115, 30);
             this.bEditVehicle.TabIndex = 3;
             this.bEditVehicle.Text = "Edit Vehicle";
             this.bEditVehicle.UseVisualStyleBackColor = true;
@@ -70,9 +71,9 @@
             // bDeleteVehicle
             // 
             this.bDeleteVehicle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDeleteVehicle.Location = new System.Drawing.Point(1061, 101);
+            this.bDeleteVehicle.Location = new System.Drawing.Point(1057, 103);
             this.bDeleteVehicle.Name = "bDeleteVehicle";
-            this.bDeleteVehicle.Size = new System.Drawing.Size(111, 29);
+            this.bDeleteVehicle.Size = new System.Drawing.Size(115, 30);
             this.bDeleteVehicle.TabIndex = 4;
             this.bDeleteVehicle.Text = "Delete Vehicle";
             this.bDeleteVehicle.UseVisualStyleBackColor = true;
@@ -92,19 +93,31 @@
             // bExitVehicleList
             // 
             this.bExitVehicleList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bExitVehicleList.Location = new System.Drawing.Point(1049, 744);
+            this.bExitVehicleList.Location = new System.Drawing.Point(1057, 744);
             this.bExitVehicleList.Name = "bExitVehicleList";
-            this.bExitVehicleList.Size = new System.Drawing.Size(115, 28);
+            this.bExitVehicleList.Size = new System.Drawing.Size(115, 30);
             this.bExitVehicleList.TabIndex = 7;
             this.bExitVehicleList.Text = "Exit";
             this.bExitVehicleList.UseVisualStyleBackColor = true;
             this.bExitVehicleList.Click += new System.EventHandler(this.bExitVehicleList_Click);
+            // 
+            // bRefreshVehicles
+            // 
+            this.bRefreshVehicles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bRefreshVehicles.Location = new System.Drawing.Point(1057, 139);
+            this.bRefreshVehicles.Name = "bRefreshVehicles";
+            this.bRefreshVehicles.Size = new System.Drawing.Size(115, 30);
+            this.bRefreshVehicles.TabIndex = 27;
+            this.bRefreshVehicles.Text = "Refresh";
+            this.bRefreshVehicles.UseVisualStyleBackColor = true;
+            this.bRefreshVehicles.Click += new System.EventHandler(this.bRefreshVehicles_Click);
             // 
             // ManageVehicles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 786);
+            this.Controls.Add(this.bRefreshVehicles);
             this.Controls.Add(this.bExitVehicleList);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bDeleteVehicle);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.Button bDeleteVehicle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button bExitVehicleList;
+        private System.Windows.Forms.Button bRefreshVehicles;
     }
 }

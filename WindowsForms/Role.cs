@@ -12,16 +12,19 @@ namespace WindowsForms
     using System;
     using System.Collections.Generic;
     
-    public partial class CarRentalRecord
+    public partial class Role
     {
-        public int Id { get; set; }
-        public string CustomerName { get; set; }
-        public Nullable<System.DateTime> DateRented { get; set; }
-        public Nullable<System.DateTime> DateReturned { get; set; }
-        public Nullable<decimal> Cost { get; set; }
-        public Nullable<int> CarType { get; set; }
-        public Nullable<System.DateTime> Age { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Role()
+        {
+            this.UserRoles = new HashSet<UserRole>();
+        }
     
-        public virtual TypesOfCar TypesOfCar { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string ShortName { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

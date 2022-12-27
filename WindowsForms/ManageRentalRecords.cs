@@ -12,11 +12,10 @@ namespace WindowsForms
 {
     public partial class ManageRentalRecords : Form
     {
-        private readonly CarRentalEntities carRentalDB;
+        private readonly CarRentalEntities carRentalDB = new CarRentalEntities();
         public ManageRentalRecords()
         {
             InitializeComponent();
-            carRentalDB = new CarRentalEntities();
         }
 
         private void bAddRecord_Click(object sender, EventArgs e)
@@ -43,7 +42,7 @@ namespace WindowsForms
                 //Query Db for record
                 var record = carRentalDB
                     .CarRentalRecords
-                    .FirstOrDefault(qDB => qDB.id == id); // Get the value
+                    .FirstOrDefault(qDB => qDB.Id == id); // Get the value
 
                 var editRentalRecord = new EditRentalRecord(record, this)
                 {
@@ -75,7 +74,7 @@ namespace WindowsForms
                 //Query Db for record
                 var record = carRentalDB
                     .CarRentalRecords
-                    .FirstOrDefault(qDB => qDB.id == id); // Get the value
+                    .FirstOrDefault(qDB => qDB.Id == id); // Get the value
 
                 DialogResult dr = MessageBox.Show("DELETING RECORD ARE YOU SURE?",
                     "Delete", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
@@ -95,10 +94,6 @@ namespace WindowsForms
             }
         }
 
-        private void bExitRecords_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
         private void ManageRentalRecords_Load(object sender, EventArgs e)
         {
@@ -119,10 +114,10 @@ namespace WindowsForms
                 .Select(rec => new //Lambda Expression
                 {
                     Customer = rec.CustomerName,
-                    // AgeCheck = rec.DateOfBirth
+                    // AgeCheck = rec.Age
                     StartDate = rec.DateRented,
                     EndDate = rec.DateReturned,
-                    Id = rec.id,
+                    rec.Id,
                     rec.Cost,
                     RentedCarType = rec.TypesOfCar.Make + " " + rec.TypesOfCar.Model 
                 })
@@ -132,6 +127,16 @@ namespace WindowsForms
             dgvRentalRecordList.Columns["StartDate"].HeaderText = "Start Date";
             dgvRentalRecordList.Columns["EndDate"].HeaderText = "End Date";
             dgvRentalRecordList.Columns["Id"].Visible = false;
+        }
+
+        private void bExitRecords_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void bRefreshRecords_Click(object sender, EventArgs e)
+        {
+            PopulateGrid(); // Needed untill Add and Edit are fixed to Refresh the DB
         }
     }
 }

@@ -12,16 +12,13 @@ namespace WindowsForms
     using System;
     using System.Collections.Generic;
     
-    public partial class CarRentalRecord
+    public partial class UserRole
     {
         public int Id { get; set; }
-        public string CustomerName { get; set; }
-        public Nullable<System.DateTime> DateRented { get; set; }
-        public Nullable<System.DateTime> DateReturned { get; set; }
-        public Nullable<decimal> Cost { get; set; }
-        public Nullable<int> CarType { get; set; }
-        public Nullable<System.DateTime> Age { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> RolesId { get; set; }
     
-        public virtual TypesOfCar TypesOfCar { get; set; }
+        public virtual Role Role { get; set; }
+        public virtual User User { get; set; }
     }
 }
