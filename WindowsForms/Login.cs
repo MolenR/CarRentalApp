@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -29,7 +27,7 @@ namespace WindowsForms
                 var user = carRentalDB.Users
                     .FirstOrDefault(qDB =>
                     qDB.Username == username &&
-                    qDB.Password == password && //Needs to change to password_hashed
+                    qDB.Password == password_hashed &&
                     qDB.isActive == true);
                 if (user == null)
                 {
@@ -45,10 +43,9 @@ namespace WindowsForms
                     Hide();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                MessageBox.Show("INVALID ENTRY");
+                MessageBox.Show("LOGIN FAILED");
             }
         }
     }

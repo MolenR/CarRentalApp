@@ -13,30 +13,22 @@ namespace WindowsForms
 {
     public partial class ManageVehicles : Form
     {
-        // Gives Access to the Entities inside de DB
-        private readonly CarRentalEntities carRentalDB;
+        // Gives Access to the Entities inside de DB    //Initializing to new Instance 
+        private readonly CarRentalEntities carRentalDB = new CarRentalEntities();
 
         public ManageVehicles()
         {
             InitializeComponent();
-
-            //Initializing to new Instance 
-            carRentalDB = new CarRentalEntities();
         }
 
         private void bAddVehicle_Click(object sender, EventArgs e)
         {
-            EditVehicle addEdit = new EditVehicle(this)
+            if (!Utils.FormIsOpen("AddVehicle"))
             {
-                MdiParent = this.MdiParent
-            }; // Making the call to EditVehicles
-            addEdit.Show();
-            
-            //Add Vehicle to Table
-            carRentalDB.TypesOfCars.Create();
-            carRentalDB.SaveChanges();
-
-            PopulateGrid();
+                var addVehicle = new EditVehicle(this);
+                MdiParent = this.MdiParent;
+                addVehicle.Show();
+            }
         }
 
         private void bEditVehicle_Click(object sender, EventArgs e)

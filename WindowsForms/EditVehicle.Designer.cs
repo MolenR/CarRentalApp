@@ -193,7 +193,7 @@
             this.lbID.TabIndex = 7;
             this.lbID.Visible = false;
             // 
-            // AddEditVehicle
+            // EditVehicle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -203,8 +203,8 @@
             this.Controls.Add(this.bSave);
             this.Controls.Add(this.bCancelEdit);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "AddEditVehicle";
-            this.Text = "Edit";
+            this.Name = "EditVehicle";
+            this.Text = "Edit Vehicle";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

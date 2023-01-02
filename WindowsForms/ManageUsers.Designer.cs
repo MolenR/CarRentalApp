@@ -35,6 +35,9 @@
             this.bAddNewUser = new System.Windows.Forms.Button();
             this.dgvUsersList = new System.Windows.Forms.DataGridView();
             this.bRefreshUsers = new System.Windows.Forms.Button();
+            this.bEditUserRole = new System.Windows.Forms.Button();
+            this.bDeleteUser = new System.Windows.Forms.Button();
+            this.bDeleteUserRole = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsersList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,18 +66,18 @@
             // bDeactivateUser
             // 
             this.bDeactivateUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDeactivateUser.Location = new System.Drawing.Point(1057, 102);
+            this.bDeactivateUser.Location = new System.Drawing.Point(1057, 66);
             this.bDeactivateUser.Name = "bDeactivateUser";
             this.bDeactivateUser.Size = new System.Drawing.Size(115, 30);
             this.bDeactivateUser.TabIndex = 23;
-            this.bDeactivateUser.Text = "Reset User";
+            this.bDeactivateUser.Text = "Activate User";
             this.bDeactivateUser.UseVisualStyleBackColor = true;
             this.bDeactivateUser.Click += new System.EventHandler(this.bDeactivateUser_Click);
             // 
             // bResetPassword
             // 
             this.bResetPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bResetPassword.Location = new System.Drawing.Point(1057, 66);
+            this.bResetPassword.Location = new System.Drawing.Point(1057, 174);
             this.bResetPassword.Name = "bResetPassword";
             this.bResetPassword.Size = new System.Drawing.Size(115, 30);
             this.bResetPassword.TabIndex = 22;
@@ -104,7 +107,7 @@
             // bRefreshUsers
             // 
             this.bRefreshUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bRefreshUsers.Location = new System.Drawing.Point(1057, 138);
+            this.bRefreshUsers.Location = new System.Drawing.Point(1057, 246);
             this.bRefreshUsers.Name = "bRefreshUsers";
             this.bRefreshUsers.Size = new System.Drawing.Size(115, 30);
             this.bRefreshUsers.TabIndex = 26;
@@ -112,11 +115,47 @@
             this.bRefreshUsers.UseVisualStyleBackColor = true;
             this.bRefreshUsers.Click += new System.EventHandler(this.bRefreshUsers_Click);
             // 
+            // bEditUserRole
+            // 
+            this.bEditUserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEditUserRole.Location = new System.Drawing.Point(1057, 102);
+            this.bEditUserRole.Name = "bEditUserRole";
+            this.bEditUserRole.Size = new System.Drawing.Size(115, 30);
+            this.bEditUserRole.TabIndex = 27;
+            this.bEditUserRole.Text = "Edit User Role";
+            this.bEditUserRole.UseVisualStyleBackColor = true;
+            this.bEditUserRole.Click += new System.EventHandler(this.bEditUserRole_Click);
+            // 
+            // bDeleteUser
+            // 
+            this.bDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDeleteUser.Location = new System.Drawing.Point(1057, 210);
+            this.bDeleteUser.Name = "bDeleteUser";
+            this.bDeleteUser.Size = new System.Drawing.Size(115, 30);
+            this.bDeleteUser.TabIndex = 28;
+            this.bDeleteUser.Text = "Delete User";
+            this.bDeleteUser.UseVisualStyleBackColor = true;
+            this.bDeleteUser.Click += new System.EventHandler(this.bDeleteUser_Click);
+            // 
+            // bDeleteUserRole
+            // 
+            this.bDeleteUserRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDeleteUserRole.Location = new System.Drawing.Point(1057, 138);
+            this.bDeleteUserRole.Name = "bDeleteUserRole";
+            this.bDeleteUserRole.Size = new System.Drawing.Size(115, 30);
+            this.bDeleteUserRole.TabIndex = 29;
+            this.bDeleteUserRole.Text = "Delete User Role";
+            this.bDeleteUserRole.UseVisualStyleBackColor = true;
+            this.bDeleteUserRole.Click += new System.EventHandler(this.bDeleteUserRole_Click);
+            // 
             // ManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 786);
+            this.Controls.Add(this.bDeleteUserRole);
+            this.Controls.Add(this.bDeleteUser);
+            this.Controls.Add(this.bEditUserRole);
             this.Controls.Add(this.bRefreshUsers);
             this.Controls.Add(this.bExitUsers);
             this.Controls.Add(this.lbManageUsers);
@@ -142,5 +181,8 @@
         private System.Windows.Forms.Button bAddNewUser;
         private System.Windows.Forms.DataGridView dgvUsersList;
         private System.Windows.Forms.Button bRefreshUsers;
+        private System.Windows.Forms.Button bEditUserRole;
+        private System.Windows.Forms.Button bDeleteUser;
+        private System.Windows.Forms.Button bDeleteUserRole;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -21,15 +20,15 @@ namespace WindowsForms
             InitializeComponent();  
             _login = login;
             _user = user;
-            _rolename = user.UserRoles.FirstOrDefault().Role.ShortName;
+            _rolename = user.UserRoles.FirstOrDefault().Role.Name;
         }
 
         private void addRentalRecordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var isOpen = Utils.FormIsOpen("EditRentalRecord");
-            if (!isOpen)
+            // Check for this window open and not open another window
+            if (!Utils.FormIsOpen("EditRentalRecord"))
             {
-                //Instance new object
+                //Initialize new object
                 var addRentalRecord = new EditRentalRecord() { MdiParent = this };
                 addRentalRecord.Show();
             }
@@ -37,10 +36,8 @@ namespace WindowsForms
 
         private void manageVehicleListingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var isOpen = Utils.FormIsOpen("ManageVehicles");
-            if (!isOpen)
+            if (!Utils.FormIsOpen("ManageVehicles"))
             {
-                // Should check for this and not open another window
                 var vehicleListing = new ManageVehicles { MdiParent = this };
                 vehicleListing.Show();
             }
@@ -48,8 +45,7 @@ namespace WindowsForms
 
         private void viewArchiveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var isOpen = Utils.FormIsOpen("ManageRentalRecords");
-            if (!isOpen)
+            if (!Utils.FormIsOpen("ManageRentalRecords"))
             {
                 var manageRentalRecords = new ManageRentalRecords { MdiParent = this };
                 manageRentalRecords.Show();
@@ -58,11 +54,20 @@ namespace WindowsForms
 
         private void manageUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var isOpen = Utils.FormIsOpen("ManageUsers");
-            if (!isOpen)
+
+            if (!Utils.FormIsOpen("ManageUsers"))
             {
                 var manageUsers = new ManageUsers { MdiParent = this };
                 manageUsers.Show();
+            }
+        }
+
+        private void manageRolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Utils.FormIsOpen("ManageRoles"))
+            {
+                var manageRoles = new ManageRoles { MdiParent = this };
+                manageRoles.Show();
             }
         }
 
@@ -73,9 +78,18 @@ namespace WindowsForms
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            if(_user.Password == Utils.DefaultHashPassword())
+            {
+                var resetPassword = new ResetPassword(_user);
+                resetPassword.ShowDialog();
+            }
+
+            var username = _user.Username;
+            tsslLoginText.Text = $"Logged in As: {username}";
             if(_rolename != "admin")
             {
                 manageUsersToolStripMenuItem.Visible = false;
+                manageRolesToolStripMenuItem.Visible = false;
             }
         }
     }

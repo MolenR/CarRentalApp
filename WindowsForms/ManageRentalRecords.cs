@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsForms
@@ -20,13 +15,12 @@ namespace WindowsForms
 
         private void bAddRecord_Click(object sender, EventArgs e)
         {
-            var addRentalRecord = new EditRentalRecord(this);
-            addRentalRecord.ShowDialog();
-            addRentalRecord.MdiParent = this.MdiParent;
-            carRentalDB.CarRentalRecords.Create();
-            carRentalDB.SaveChanges();
-
-            PopulateGrid();
+            if (!Utils.FormIsOpen("AddRecord"))
+            {
+                var addRecord = new EditRentalRecord(this);
+                MdiParent = this.MdiParent;
+                addRecord.Show();
+            }
         }
 
         private void bEditRecord_Click(object sender, EventArgs e)
@@ -50,14 +44,14 @@ namespace WindowsForms
                 };
                 editRentalRecord.Show();
 
-                carRentalDB.CarRentalRecords.Add(record);
+                carRentalDB.CarRentalRecords.Add(record); // Checken werkt niet goed
                 carRentalDB.SaveChanges();
 
                 PopulateGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("FAILED EDITING RECORD");
             }
         }
 
@@ -84,13 +78,14 @@ namespace WindowsForms
                     //Delete Vehicle from Table
                     carRentalDB.CarRentalRecords.Remove(record);
                     carRentalDB.SaveChanges();
+                    MessageBox.Show("RECORD REMOVED");
+                    PopulateGrid();
                 }
-                PopulateGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("FAILED REMOVING RECORD");
             }
         }
 
@@ -101,10 +96,10 @@ namespace WindowsForms
             {
                 PopulateGrid();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                MessageBox.Show($"Error: {ex.Message}");
+                MessageBox.Show("FAILED LOADING GRID");
             }
         }
 

@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
 using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsForms
 {
@@ -39,7 +31,7 @@ namespace WindowsForms
             _manageRecords = manageRecords;
             if (recordToEdit == null) 
             {
-                MessageBox.Show("Invalid Selected Record");
+                MessageBox.Show("INVALID SELECTED RECORD");
             }
             else
             {
@@ -119,24 +111,26 @@ namespace WindowsForms
                         RentalRecordProfile(customerName, cost, dateRent, dateReturned, rentalRecord);
                         //Add 
                         carRentalDB.CarRentalRecords.Add(rentalRecord);
-                        _manageRecords.PopulateGrid();
+                        carRentalDB.SaveChanges();
+
+                        _manageRecords.PopulateGrid(); // NullReferenceException
                     }
                 }
                 carRentalDB.SaveChanges();
                 MessageBox.Show("RECORD SAVED");
 
                 MessageBox.Show($"Thank you {customerName}, \n\r" +
-                    $"Renting the car type: {carType}\n\r" +
-                    $"From {dateRent} untill {dateReturned}\n\r" +
-                    $"The total costs will be: ${cost}\n\r" +
+                    $"\n\rRenting the car type: \n\r{carType}\n\r" +
+                    $"\n\rFrom {dateRent} untill {dateReturned}\n\r" +
+                    $"\n\rThe total costs will be: ${cost}\n\r" +
                     "\n\rTHANK YOU FOR RENTING WITH US");
                         
                 Close();
             }
             // Catch the Error
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("FAILED SUBMITTING FORM");
                 //throw will end the program out of the execption
             }
         }
@@ -161,10 +155,10 @@ namespace WindowsForms
                 .Select(car => new { ID = car.Id, Name = car.Make + " " + car.Model })
                 .ToList();
             //ComboBox search Name
-            cbTypeCar.DisplayMember= "Name";
+            cbTypeCar.DisplayMember = "Name";
             //Store the id
-            cbTypeCar.ValueMember= "ID";
-            cbTypeCar.DataSource= cars;
+            cbTypeCar.ValueMember = "ID";
+            cbTypeCar.DataSource = cars;
         }
 
         private void bCancelRent_Click(object sender, EventArgs e)

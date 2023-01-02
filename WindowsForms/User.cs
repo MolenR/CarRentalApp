@@ -23,7 +23,7 @@ namespace WindowsForms
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public bool isActive { get; set; }
+        public Nullable<bool> isActive { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserRole> UserRoles { get; set; }

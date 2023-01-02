@@ -27,7 +27,7 @@ namespace WindowsForms
         }
 
         // Getting the Object TypesOfCar in the Constructor
-        public EditVehicle(TypesOfCar carToEdit, ManageVehicles manageVehicles = null) // Setting field value // Method OverLoading
+        public EditVehicle(TypesOfCar carToEdit, ManageVehicles manageVehicles) // Setting field value // Method OverLoading
         {
             InitializeComponent(); // Intializing 
             lbTitleVehicle.Text = "Edit Vehicle"; // Setting Title
@@ -35,7 +35,7 @@ namespace WindowsForms
             _manageVehicles = manageVehicles;
             if (carToEdit == null ) 
             {
-                MessageBox.Show("Invalid Selected Record");
+                MessageBox.Show("INVALID SELECTED RECORD");
             }
             else
             {
@@ -94,9 +94,9 @@ namespace WindowsForms
                     Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Error: {ex.Message}");                
+                MessageBox.Show("FAILED CREATING NEW CAR");                
             }
         }
 

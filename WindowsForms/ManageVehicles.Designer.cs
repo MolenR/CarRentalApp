@@ -41,7 +41,7 @@
             // dgvVehicleList
             // 
             this.dgvVehicleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVehicleList.Location = new System.Drawing.Point(20, 31);
+            this.dgvVehicleList.Location = new System.Drawing.Point(18, 31);
             this.dgvVehicleList.Name = "dgvVehicleList";
             this.dgvVehicleList.Size = new System.Drawing.Size(1031, 743);
             this.dgvVehicleList.TabIndex = 0;
